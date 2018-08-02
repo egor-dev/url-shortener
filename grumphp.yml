@@ -1,0 +1,18 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    tasks:
+        phplint:
+            exclude: []
+            jobs: ~
+            triggered_by: ['php']
+        phpcsfixer2:
+            allow_risky: false
+            cache_file: ~
+            config: .php_cs.dist
+            rules: []
+            using_cache: true
+            config_contains_finder: true
+            verbose: true
+            diff: false
+            triggered_by: ['php']
