@@ -113,6 +113,18 @@ class UrlShortenerUnitTest extends TestCase
         $this->shortener->shorten('http://google.com', Carbon::now()->addWeek(), 'mytext');
     }
 
+    public function test_it_creates_link_with_same_custom_code_when_previous_expired()
+    {
+        Link::create([
+            'url' => 'http://google.com',
+            'code' => 'mytext',
+            'expired_at' => Carbon::now()->subDay(),
+        ]);
+
+        $link = $this->shortener->shorten('http://google.com', Carbon::now()->addWeek(), 'mytext');
+        $this->assertEquals('mytext', $link->code);
+    }
+
     public function test_it_creates_link_with_custom_expiration_date()
     {
         $url = 'http://google.com';
