@@ -23,6 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+//        //$this->app->bind(ClientInterface::class, Client::class);
+//        $this->app->bind(UrlShortener::class, function () {
+//            return new RequestableUrlShortener(
+//                new UrlShortener(),
+//                new Client()
+//            );
+//        });
     }
 }

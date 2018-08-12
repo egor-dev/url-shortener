@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// переход по короткой ссылке
+Route::get('/{code}', 'LinksController@forward');
+
+// статистика переходов по короткой ссылке
+Route::get('/{code}/hits', 'LinksController@hits');
+
+// главная
+Route::get('/', 'LinksController@index');
+
+// создание короткой ссылки
+Route::post('/', 'LinksController@store');
+
