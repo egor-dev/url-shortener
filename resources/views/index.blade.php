@@ -11,11 +11,11 @@
     </div>
     <div class="form-group">
         <label for="email">Custom Code:</label>
-        {!! Form::input('text', 'custom_code', null, ['class'=>'form-control col-md-6', 'placeholder'=>'Custom code', 'maxlength' => config('app.code_length')]) !!}
+        {!! Form::input('text', 'custom_code', null, ['class'=>'form-control col-md-6', 'placeholder'=>'Custom code', 'maxlength' => config('app.max_code_length')]) !!}
     </div>
     <div class="form-group">
         <label for="email">Expiration Date:</label>
-        {!! Form::date('expired_at', \Carbon\Carbon::now()->addYear(), ['class'=>'form-control col-md-6']) !!}
+        {!! Form::date('expired_at', \Carbon\Carbon::now()->addDays(config('app.max_code_lifetime_days')), ['class'=>'form-control col-md-6']) !!}
     </div>
     {!! Form::submit('Shorten!', ['class'=>'btn btn-primary col-md-3']) !!}
 
