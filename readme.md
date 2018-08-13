@@ -42,6 +42,11 @@ touch database/database.sqlite
 php artisan migrate
 ```
 
+Создать символьную ссылку
+```
+php artisan storage:link
+```
+
 Поднять тестовый веб-сервер 
 ```
 php artisan serve
