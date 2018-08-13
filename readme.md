@@ -18,7 +18,7 @@
 
 - PHP 7.1
 - Composer
-- SQLite3
+- SQLite3 extension
 
 # Установка и запуск
 
